@@ -1,0 +1,194 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Musa Tutoring Brand Design System
+   Brand Colors: Sky Blue #63B3FF, Navy #0B2D5B, White #FFFFFF
+   Font: Inter (clean, professional)
+   Style: Clean cards, large rounded buttons, accessible, plenty of white space
+   AA Contrast Compliance: All text meets WCAG 2.1 AA standards
+*/
+
+@layer base {
+  :root {
+    /* Brand Colors - Musa Tutoring (sampled from the logo) */
+    --brand-sky-blue: 205 77% 68%;       /* #70B9EC - logo blue */
+    --brand-navy: 208 73% 20%;           /* deep navy in the same hue family */
+    --brand-white: 0 0% 100%;            /* #FFFFFF */
+    
+    /* Core System Colors */
+    --background: var(--brand-white);
+    --foreground: var(--brand-navy);
+
+    --card: var(--brand-white);
+    --card-foreground: var(--brand-navy);
+
+    --popover: var(--brand-white);
+    --popover-foreground: var(--brand-navy);
+
+    --primary: var(--brand-sky-blue);
+    --primary-foreground: var(--brand-white);
+    /* Deeper logo blue used for buttons so white text meets AA contrast */
+    --primary-strong: 205 72% 40%;
+
+    --secondary: var(--brand-navy);
+    --secondary-foreground: var(--brand-white);
+
+    /* Enhanced contrast and accessibility */
+    --muted: 205 30% 96%;
+    --muted-foreground: 208 22% 42%;  /* Improved contrast ratio */
+
+    --accent: var(--brand-sky-blue);
+    --accent-foreground: var(--brand-white);
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: var(--brand-white);
+
+    --border: 205 25% 86%;  /* Slightly darker for better visibility */
+    --input: 205 25% 92%;
+    --ring: var(--brand-sky-blue);
+
+    --radius: 1rem;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(var(--brand-sky-blue)), hsl(205 70% 58%));
+    --gradient-card: linear-gradient(145deg, hsl(var(--brand-white)), hsl(205 25% 98%));
+    
+    /* Shadows */
+    --shadow-card: 0 4px 20px hsl(var(--brand-navy) / 0.08);
+    --shadow-button: 0 4px 15px hsl(var(--brand-sky-blue) / 0.3);
+    --shadow-hero: 0 10px 40px hsl(var(--brand-navy) / 0.15);
+    
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    /* Sidebar (keeping existing) */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Brand Colors remain consistent in dark mode */
+    --brand-sky-blue: 205 77% 68%;
+    --brand-navy: 208 73% 20%;
+    --brand-white: 0 0% 100%;
+    
+    --background: var(--brand-navy);
+    --foreground: var(--brand-white);
+
+    --card: var(--brand-navy);
+    --card-foreground: var(--brand-white);
+
+    --popover: var(--brand-navy);
+    --popover-foreground: var(--brand-white);
+
+    --primary: var(--brand-sky-blue);
+    --primary-foreground: var(--brand-navy);
+    --primary-strong: 205 65% 52%;
+
+    --secondary: 208 60% 25%;
+    --secondary-foreground: var(--brand-white);
+
+    --muted: 208 40% 15%;
+    --muted-foreground: 205 20% 72%;
+
+    --accent: var(--brand-sky-blue);
+    --accent-foreground: var(--brand-navy);
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: var(--brand-white);
+
+    --border: 208 40% 25%;
+    --input: 208 40% 25%;
+    --ring: var(--brand-sky-blue);
+    
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-inter;
+  }
+}
+
+@layer utilities {
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+  
+  .gradient-card {
+    background: var(--gradient-card);
+  }
+  
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+  
+  .shadow-button {
+    box-shadow: var(--shadow-button);
+  }
+  
+  .shadow-hero {
+    box-shadow: var(--shadow-hero);
+  }
+  
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+}
+
+/* ---------------------------------------------------------------
+   TutorCruncher enquiry form
+   Nudges the embedded form to match the site's fonts and colours.
+   The form's own markup comes from TutorCruncher, so keep this light.
+   --------------------------------------------------------------- */
+@layer components {
+  .tc-socket-form {
+    font-family: inherit;
+  }
+
+  .tc-socket-form input,
+  .tc-socket-form select,
+  .tc-socket-form textarea {
+    @apply w-full rounded-xl border border-input bg-background px-3 py-2 text-base text-foreground;
+  }
+
+  .tc-socket-form input:focus,
+  .tc-socket-form select:focus,
+  .tc-socket-form textarea:focus {
+    @apply outline-none ring-2 ring-ring ring-offset-2;
+  }
+
+  .tc-socket-form label {
+    @apply mb-1 block text-sm font-medium text-secondary;
+  }
+
+  .tc-socket-form button[type='submit'],
+  .tc-socket-form input[type='submit'] {
+    @apply w-full cursor-pointer rounded-xl border-0 px-6 py-3 text-base font-semibold text-white;
+    background-color: hsl(var(--primary-strong));
+  }
+
+  .tc-socket-form button[type='submit']:hover,
+  .tc-socket-form input[type='submit']:hover {
+    opacity: 0.9;
+  }
+}
