@@ -1,55 +1,42 @@
-import { Star } from 'lucide-react';
-import { Button } from '@/components/ui/button';
 import { testimonials } from '@/content/testimonials';
-import { site } from '@/content/site';
-import { bookingHref } from '@/lib/booking';
 
+/**
+ * PARENT FEEDBACK
+ * This section hides itself completely while `testimonials` is empty,
+ * so there is never a placeholder or an invented quote on the site.
+ * Add real ones in src/content/testimonials.ts when you have them.
+ */
 const Testimonials = () => {
-  // The section hides itself entirely until there is at least one real
-  // review in src/content/testimonials.ts
-  if (testimonials.length === 0) return null;
+  if (!testimonials || testimonials.length === 0) return null;
 
   return (
-    <section id="testimonials" className="scroll-mt-20 py-16 lg:py-24 bg-muted/30">
+    <section id="testimonials" className="scroll-mt-24 bg-background py-20 lg:py-28">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl lg:text-4xl font-bold text-secondary mb-4">
-            What Families Say
+        <div className="mx-auto max-w-3xl text-center">
+          <p className="eyebrow mb-4">In Their Words</p>
+          <h2 className="rule-gold rule-gold-center mb-6 text-3xl font-semibold text-navy lg:text-[2.6rem]">
+            What Parents Say
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            In their own words.
-          </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-          {testimonials.map((testimonial, index) => (
-            <div
-              key={index}
-              className="bg-card rounded-2xl p-6 shadow-card border border-border/50"
+        <div className="mx-auto mt-16 grid max-w-5xl gap-8 md:grid-cols-2 lg:grid-cols-3">
+          {testimonials.map((t, i) => (
+            <figure
+              key={i}
+              className="rounded-xl border border-border bg-card p-8 shadow-card"
             >
-              <div className="flex gap-1 mb-4">
-                {Array.from({ length: testimonial.rating }).map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-primary text-primary-strong" />
-                ))}
+              <div aria-hidden="true" className="mb-4 font-serif text-4xl leading-none text-gold">
+                &ldquo;
               </div>
-              <p className="text-muted-foreground leading-relaxed mb-6">"{testimonial.text}"</p>
-              <div className="border-t border-border pt-4">
-                <p className="font-bold text-secondary">{testimonial.name}</p>
-                <p className="text-sm text-muted-foreground">
-                  {testimonial.relationship} · {testimonial.location}
-                </p>
-                <p className="text-xs text-primary-strong mt-1">{testimonial.subject}</p>
-              </div>
-            </div>
+              <blockquote className="leading-relaxed text-navy">{t.quote}</blockquote>
+              <figcaption className="mt-6 border-t border-border pt-4 text-sm">
+                <span className="font-semibold text-navy">{t.name}</span>
+                {t.detail && (
+                  <span className="block text-muted-foreground">{t.detail}</span>
+                )}
+              </figcaption>
+            </figure>
           ))}
-        </div>
-
-        <div className="text-center">
-          <Button variant="hero" asChild>
-            <a href={bookingHref(site.schedulerUrl)}>
-              Book a Free Session
-            </a>
-          </Button>
         </div>
       </div>
     </section>

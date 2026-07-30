@@ -19,7 +19,18 @@ export default {
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
-        "primary-strong": "hsl(var(--primary-strong))",
+        "primary-strong": "hsl(var(--primary))",
+        navy: {
+          DEFAULT: "hsl(var(--brand-navy))",
+          800: "hsl(var(--brand-navy-800))",
+          700: "hsl(var(--brand-navy-700))",
+        },
+        ivory: "hsl(var(--brand-ivory))",
+        gold: {
+          DEFAULT: "hsl(var(--brand-gold))",
+          deep: "hsl(var(--brand-gold-deep))",
+          soft: "hsl(var(--brand-gold-soft))",
+        },
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
@@ -48,19 +59,14 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        sidebar: {
-          DEFAULT: "hsl(var(--sidebar-background))",
-          foreground: "hsl(var(--sidebar-foreground))",
-          primary: "hsl(var(--sidebar-primary))",
-          "primary-foreground": "hsl(var(--sidebar-primary-foreground))",
-          accent: "hsl(var(--sidebar-accent))",
-          "accent-foreground": "hsl(var(--sidebar-accent-foreground))",
-          border: "hsl(var(--sidebar-border))",
-          ring: "hsl(var(--sidebar-ring))",
-        },
       },
       fontFamily: {
-        inter: ['Inter', 'system-ui', 'sans-serif'],
+        sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        serif: ['Lora', 'Georgia', 'Times New Roman', 'serif'],
+        display: ['Lora', 'Georgia', 'Times New Roman', 'serif'],
+      },
+      spacing: {
+        13: '3.25rem',
       },
       borderRadius: {
         lg: "var(--radius)",

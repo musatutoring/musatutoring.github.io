@@ -200,12 +200,13 @@ The files you will actually touch:
 
 | To change | Edit this file |
 | --- | --- |
-| Phone, email, service area | `src/content/site.ts` |
+| Dates, places, what's included, promises | `src/content/program.ts` |
+| Phone, email, address, booking link | `src/content/site.ts` |
+| The four enrolment steps | `src/content/process.ts` |
+| Courses taught | `src/content/curriculum.ts` |
+| FAQ questions | `src/content/faq.ts` |
 | Add a tutor | `src/content/tutors.ts` |
 | Add a parent review | `src/content/testimonials.ts` |
-| Subjects offered | `src/content/services.ts` |
-| FAQ questions | `src/content/faq.ts` |
-| The tracks/pathways | `src/content/tracks.ts` |
 
 **If the site breaks after an edit:** you deleted a quote mark, comma, or curly
 brace. Go to the **Commits** list, open your last commit, and click **Revert**.
@@ -248,10 +249,10 @@ the site will never build. To add it by hand:
 
 These are not blocking, but each one matters:
 
-- [ ] Confirm how long the free first session actually is, and put the number
-      back into the copy (see note in the handover message)
-- [ ] Replace the stock hero image with a real photo of a session, with permission
-- [ ] Add three real parent reviews to `src/content/testimonials.ts`
-- [ ] Add tutors to `src/content/tutors.ts` as they come on
-- [ ] Decide whether to publish starting prices once you have raised them
-- [ ] Add the MCAT/CASPer line once its format and price are set
+- [ ] **Create the Google Calendar booking page and paste the link into `site.ts`.**
+      Nothing else matters as much; the whole funnel starts there
+- [ ] Check the four credibility figures in `program.ts`, especially hours delivered
+- [ ] Interview and onboard the second tutor, or reduce `seatsTotal` to 12
+- [ ] Replace the hero photograph with a real one, with permission
+- [ ] Collect two or three real parent reviews for `testimonials.ts`
+- [ ] Record baseline and final scores for this cohort so the next one can sell on proof

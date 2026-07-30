@@ -1,8 +1,9 @@
 import Header from '@/components/Header';
 import Hero from '@/components/sections/Hero';
-import Problem from '@/components/sections/Problem';
+import Differentiators from '@/components/sections/Differentiators';
 import HowItWorks from '@/components/sections/HowItWorks';
 import Included from '@/components/sections/Included';
+import Problem from '@/components/sections/Problem';
 import Curriculum from '@/components/sections/Curriculum';
 import Pricing from '@/components/sections/Pricing';
 import Guarantee from '@/components/sections/Guarantee';
@@ -23,9 +24,10 @@ const Index = () => (
     <Header />
     <main>
       <Hero />
-      <Problem />
+      <Differentiators />
       <HowItWorks />
       <Included />
+      <Problem />
       <Curriculum />
       <Pricing />
       <Guarantee />

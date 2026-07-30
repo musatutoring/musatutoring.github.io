@@ -19,10 +19,10 @@ export const tutors: Tutor[] = [
     role: 'Founder',
     initials: 'M',
     summary:
-      'Musa runs every Math Plan Call himself, writes your student\u2019s plan, chooses their tutor, and meets you each month to review progress against the goal. Six years tutoring across the Twin Cities, classroom teaching experience, and a business education at the University of Minnesota.',
-    focus: ['Your consultation', 'The 12-week plan', 'Tutor matching', 'Monthly reviews'],
+      'Musa conducts every Math Plan Call himself, writes each student\u2019s twelve-week plan, selects their tutor, and meets parents monthly to review progress against the goal. He has spent six years teaching mathematics to students across the Twin Cities, alongside classroom teaching experience and a business education at the University of Minnesota.',
+    focus: ['Your Consultation', 'The Twelve-Week Plan', 'Tutor Selection', 'Monthly Reviews'],
   },
 ];
 
 export const teamNote =
-  'Your student is taught by one tutor, every week, chosen for what your student actually needs. You will know who they are and why they were matched before the program starts.';
+  'Your student is taught by one tutor throughout the term, chosen for what your student specifically needs. You will be introduced to them, and told why they were selected, before the program begins.';

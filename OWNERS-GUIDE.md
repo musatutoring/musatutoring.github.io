@@ -27,14 +27,39 @@ You do not need to touch anything else.
 
 | File | What it controls |
 | --- | --- |
-| `site.ts` | Business name, phone, email, service area, **enquiry form key**, social links |
-| `tutors.ts` | The "Meet the Tutors" section — add or remove tutors here |
-| `tracks.ts` | The tutoring tracks shown on the home page and Pathways page |
-| `services.ts` | The subject cards |
-| `plans.ts` | One-to-one vs small group, and the pricing note |
-| `process.ts` | The "How It Works" steps |
-| `faq.ts` | The FAQ questions and answers |
-| `testimonials.ts` | Parent reviews (currently empty on purpose) |
+| `program.ts` | **The most important file.** Dates, number of places, what is included, the two promises, the pricing wording, the credibility figures |
+| `site.ts` | Business name, phone, email, office address, **the booking link**, **enquiry form key** |
+| `process.ts` | The four enrolment steps and the weekly rhythm |
+| `curriculum.ts` | The courses you teach |
+| `faq.ts` | The questions and answers |
+| `tutors.ts` | Who teaches — add or remove people here |
+| `testimonials.ts` | Parent reviews (empty on purpose; the section stays hidden until you add one) |
+
+### The two things you will change most often
+
+**When enrolment closes.** In `program.ts`:
+
+```
+enrolmentCloses: '2026-08-30',
+enrolmentClosesLabel: 'August 30',
+```
+
+Change both. The first drives the countdown, the second is what parents read. Once
+that date passes, the whole site switches itself to waiting-list mode — the headings
+change, the enquiry form becomes a waiting list, and the footer follows. You do not
+need to edit anything on the day.
+
+**The number of places.** In `program.ts`:
+
+```
+seatsTotal: 20,
+```
+
+### Check these before you advertise
+
+`program.ts` contains four credibility figures. Three came from you. The fourth,
+hours of instruction delivered, is an estimate — replace it with the real number or
+remove that entry entirely.
 
 ### The rules for editing
 
@@ -50,6 +75,20 @@ Open `src/content/tutors.ts`, copy one whole block from `{` down to `},`, paste 
 ### Adding a testimonial
 
 Open `src/content/testimonials.ts`. There is an example block commented out with `/*` and `*/`. Delete those two markers and fill in the real details. **The testimonials section stays hidden until there is at least one real review in this file** — so it will never show placeholder content.
+
+### The booking link
+
+Every "Book Your Math Plan Call" button points at your Google Calendar appointment
+page. It is set by one line in `src/content/site.ts`:
+
+```
+schedulerUrl: '',
+```
+
+Full instructions for creating that page are written directly above that line in the
+file. **Until you paste a real link in, every booking button falls back to the enquiry
+form at the foot of the page** — so nothing is ever broken, but the funnel does not
+work as designed. This is the single most important thing to finish.
 
 ### The enquiry form
 

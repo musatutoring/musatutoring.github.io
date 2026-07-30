@@ -1,28 +1,30 @@
 import { curriculum, curriculumNote } from '@/content/curriculum';
 
 const Curriculum = () => (
-  <section id="courses" className="scroll-mt-20 bg-muted/40 py-16 lg:py-24">
+  <section id="courses" className="scroll-mt-24 bg-background py-20 lg:py-28">
     <div className="container mx-auto px-4 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-3xl text-center">
-        <h2 className="mb-4 text-3xl font-bold text-secondary lg:text-4xl">
-          Courses we teach
+        <p className="eyebrow mb-4">Coverage</p>
+        <h2 className="rule-gold rule-gold-center mb-6 text-3xl font-semibold text-navy lg:text-[2.6rem]">
+          Courses We Teach
         </h2>
-        <p className="text-lg text-muted-foreground">{curriculumNote}</p>
+        <p className="mt-8 text-lg leading-relaxed text-muted-foreground">
+          {curriculumNote}
+        </p>
       </div>
 
-      <div className="mx-auto mt-12 grid max-w-4xl gap-6 md:grid-cols-3">
+      <div className="mx-auto mt-16 grid max-w-4xl gap-px overflow-hidden rounded-xl border border-border bg-border md:grid-cols-3">
         {curriculum.map((group) => (
-          <div
-            key={group.group}
-            className="rounded-2xl border border-border/50 bg-card p-6 shadow-card"
-          >
-            <h3 className="mb-4 text-sm font-semibold uppercase tracking-wide text-primary-strong">
-              {group.group}
-            </h3>
-            <ul className="space-y-2">
+          <div key={group.group} className="bg-card p-8">
+            <h3 className="eyebrow mb-5">{group.group}</h3>
+            <ul className="space-y-2.5">
               {group.items.map((item) => (
-                <li key={item} className="text-secondary">
-                  {item}
+                <li key={item} className="flex items-start gap-3 text-navy">
+                  <span
+                    aria-hidden="true"
+                    className="mt-[0.6rem] h-1 w-1 shrink-0 rounded-full bg-gold"
+                  />
+                  <span>{item}</span>
                 </li>
               ))}
             </ul>

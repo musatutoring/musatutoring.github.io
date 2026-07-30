@@ -2,163 +2,158 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Musa Tutoring Brand Design System
-   Brand Colors: Sky Blue #63B3FF, Navy #0B2D5B, White #FFFFFF
-   Font: Inter (clean, professional)
-   Style: Clean cards, large rounded buttons, accessible, plenty of white space
-   AA Contrast Compliance: All text meets WCAG 2.1 AA standards
-*/
+/* ===================================================================
+   MUSA TUTORING — BRAND TOKENS
+   Deep ink navy · brushed gold · warm ivory
+   Matches the print collateral (banners, cards, pamphlet).
+
+   Rule that governs everything below:
+   gold does not have enough contrast to be text on a light background
+   (2.2:1). So gold appears as rules, borders, icons, and as a button
+   fill with navy text on top (6.1:1). Navy carries all the small text.
+   =================================================================== */
 
 @layer base {
   :root {
-    /* Brand Colors - Musa Tutoring (sampled from the logo) */
-    --brand-sky-blue: 205 77% 68%;       /* #70B9EC - logo blue */
-    --brand-navy: 208 73% 20%;           /* deep navy in the same hue family */
-    --brand-white: 0 0% 100%;            /* #FFFFFF */
-    
-    /* Core System Colors */
-    --background: var(--brand-white);
+    /* --- raw brand colours --- */
+    --brand-navy: 209 63% 16%;        /* #0F2A43  deep ink navy   */
+    --brand-gold: 41 54% 54%;         /* #C9A24B  brushed gold    */
+    --brand-ivory: 44 41% 95%;        /* #F7F4EC  warm ivory      */
+    --brand-gold-deep: 41 57% 35%;    /* #8A6A26  gold, readable as text */
+    --brand-gold-soft: 43 55% 79%;    /* #E7D6AC  gold, tinted    */
+    --brand-navy-800: 210 59% 22%;
+    --brand-navy-700: 210 57% 28%;
+
+    /* --- semantic tokens --- */
+    --background: var(--brand-ivory);
     --foreground: var(--brand-navy);
 
-    --card: var(--brand-white);
+    --card: 0 0% 100%;
     --card-foreground: var(--brand-navy);
 
-    --popover: var(--brand-white);
+    --popover: 0 0% 100%;
     --popover-foreground: var(--brand-navy);
 
-    --primary: var(--brand-sky-blue);
-    --primary-foreground: var(--brand-white);
-    /* Deeper logo blue used for buttons so white text meets AA contrast */
-    --primary-strong: 205 72% 40%;
+    /* primary = navy. Workhorse buttons, 14.7:1 on ivory. */
+    --primary: var(--brand-navy);
+    --primary-foreground: var(--brand-ivory);
 
-    --secondary: var(--brand-navy);
-    --secondary-foreground: var(--brand-white);
-
-    /* Enhanced contrast and accessibility */
-    --muted: 205 30% 96%;
-    --muted-foreground: 208 22% 42%;  /* Improved contrast ratio */
-
-    --accent: var(--brand-sky-blue);
-    --accent-foreground: var(--brand-white);
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: var(--brand-white);
-
-    --border: 205 25% 86%;  /* Slightly darker for better visibility */
-    --input: 205 25% 92%;
-    --ring: var(--brand-sky-blue);
-
-    --radius: 1rem;
-
-    /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(var(--brand-sky-blue)), hsl(205 70% 58%));
-    --gradient-card: linear-gradient(145deg, hsl(var(--brand-white)), hsl(205 25% 98%));
-    
-    /* Shadows */
-    --shadow-card: 0 4px 20px hsl(var(--brand-navy) / 0.08);
-    --shadow-button: 0 4px 15px hsl(var(--brand-sky-blue) / 0.3);
-    --shadow-hero: 0 10px 40px hsl(var(--brand-navy) / 0.15);
-    
-    /* Transitions */
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    
-    /* Sidebar (keeping existing) */
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    /* Brand Colors remain consistent in dark mode */
-    --brand-sky-blue: 205 77% 68%;
-    --brand-navy: 208 73% 20%;
-    --brand-white: 0 0% 100%;
-    
-    --background: var(--brand-navy);
-    --foreground: var(--brand-white);
-
-    --card: var(--brand-navy);
-    --card-foreground: var(--brand-white);
-
-    --popover: var(--brand-navy);
-    --popover-foreground: var(--brand-white);
-
-    --primary: var(--brand-sky-blue);
-    --primary-foreground: var(--brand-navy);
-    --primary-strong: 205 65% 52%;
-
-    --secondary: 208 60% 25%;
-    --secondary-foreground: var(--brand-white);
-
-    --muted: 208 40% 15%;
-    --muted-foreground: 205 20% 72%;
-
-    --accent: var(--brand-sky-blue);
+    /* accent = gold. Feature buttons, navy text on top, 6.1:1. */
+    --accent: var(--brand-gold);
     --accent-foreground: var(--brand-navy);
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: var(--brand-white);
+    /* secondary = the dark sections */
+    --secondary: var(--brand-navy);
+    --secondary-foreground: var(--brand-ivory);
 
-    --border: 208 40% 25%;
-    --input: 208 40% 25%;
-    --ring: var(--brand-sky-blue);
-    
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --muted: 42 35% 90%;              /* #EFEADE */
+    --muted-foreground: 213 20% 36%;  /* #4A5A6E — 6.4:1 on ivory */
+
+    --destructive: 0 72% 42%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 42 26% 85%;             /* #E2DCCE warm, not grey */
+    --input: 42 26% 82%;
+    --ring: var(--brand-gold);
+
+    --radius: 0.625rem;
+
+    /* --- elevation. Warm shadows, never neutral grey. --- */
+    --shadow-card: 0 1px 2px hsl(var(--brand-navy) / 0.04),
+                   0 8px 24px -10px hsl(var(--brand-navy) / 0.12);
+    --shadow-lift: 0 2px 4px hsl(var(--brand-navy) / 0.05),
+                   0 16px 40px -14px hsl(var(--brand-navy) / 0.20);
+    --shadow-button: 0 6px 18px -6px hsl(var(--brand-navy) / 0.35);
+
+    --transition-smooth: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   }
-}
 
-@layer base {
   * {
     @apply border-border;
   }
 
   body {
-    @apply bg-background text-foreground font-inter;
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  }
+
+  /* Headings carry the serif. This is the single biggest lift in
+     making the site read as considered rather than templated. */
+  h1, h2, h3, .font-display {
+    font-family: 'Lora', Georgia, 'Times New Roman', serif;
+    font-weight: 600;
+    letter-spacing: -0.011em;
+  }
+
+  h1 {
+    letter-spacing: -0.021em;
+  }
+
+  ::selection {
+    background: hsl(var(--brand-gold) / 0.28);
+  }
+
+  :focus-visible {
+    outline: 2px solid hsl(var(--brand-gold));
+    outline-offset: 2px;
   }
 }
 
-@layer utilities {
-  .gradient-hero {
-    background: var(--gradient-hero);
-  }
-  
-  .gradient-card {
-    background: var(--gradient-card);
-  }
-  
+@layer components {
   .shadow-card {
     box-shadow: var(--shadow-card);
   }
-  
-  .shadow-button {
-    box-shadow: var(--shadow-button);
+
+  .shadow-lift {
+    box-shadow: var(--shadow-lift);
   }
-  
-  .shadow-hero {
-    box-shadow: var(--shadow-hero);
-  }
-  
+
   .transition-smooth {
     transition: var(--transition-smooth);
+  }
+
+  /* A short gold rule used under section headings. */
+  .rule-gold::after {
+    content: '';
+    display: block;
+    width: 3.5rem;
+    height: 3px;
+    margin-top: 1.25rem;
+    background: hsl(var(--brand-gold));
+    border-radius: 2px;
+  }
+
+  .rule-gold-center::after {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Small uppercase label. Uses the deep gold so it stays readable. */
+  .eyebrow {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: hsl(var(--brand-gold-deep));
+  }
+
+  .eyebrow-on-dark {
+    color: hsl(var(--brand-gold));
+  }
+
+  /* Faint grid, used behind the dark hero. */
+  .bg-grid {
+    background-image:
+      linear-gradient(hsl(var(--brand-ivory) / 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--brand-ivory) / 0.05) 1px, transparent 1px);
+    background-size: 46px 46px;
   }
 }
 
 /* ---------------------------------------------------------------
    TutorCruncher enquiry form
-   Nudges the embedded form to match the site's fonts and colours.
-   The form's own markup comes from TutorCruncher, so keep this light.
+   The markup comes from TutorCruncher, so keep these overrides light.
    --------------------------------------------------------------- */
 @layer components {
   .tc-socket-form {
@@ -168,7 +163,7 @@
   .tc-socket-form input,
   .tc-socket-form select,
   .tc-socket-form textarea {
-    @apply w-full rounded-xl border border-input bg-background px-3 py-2 text-base text-foreground;
+    @apply w-full rounded-lg border border-input bg-background px-3 py-2.5 text-base text-foreground;
   }
 
   .tc-socket-form input:focus,
@@ -178,17 +173,19 @@
   }
 
   .tc-socket-form label {
-    @apply mb-1 block text-sm font-medium text-secondary;
+    @apply mb-1.5 block text-sm font-medium text-secondary;
   }
 
   .tc-socket-form button[type='submit'],
   .tc-socket-form input[type='submit'] {
-    @apply w-full cursor-pointer rounded-xl border-0 px-6 py-3 text-base font-semibold text-white;
-    background-color: hsl(var(--primary-strong));
+    @apply w-full cursor-pointer rounded-lg border-0 px-6 py-3 text-base font-semibold;
+    background-color: hsl(var(--brand-gold));
+    color: hsl(var(--brand-navy));
   }
 
   .tc-socket-form button[type='submit']:hover,
   .tc-socket-form input[type='submit']:hover {
-    opacity: 0.9;
+    background-color: hsl(var(--brand-gold-deep));
+    color: hsl(var(--brand-ivory));
   }
 }

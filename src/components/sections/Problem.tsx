@@ -1,30 +1,35 @@
 import { problem, nameNote } from '@/content/program';
 
 const Problem = () => (
-  <section id="why" className="scroll-mt-20 bg-background py-16 lg:py-24">
+  <section id="why" className="scroll-mt-24 bg-muted/45 py-20 lg:py-28">
     <div className="container mx-auto px-4 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-3xl text-center">
-        <h2 className="mb-4 text-3xl font-bold text-secondary lg:text-4xl">
+        <p className="eyebrow mb-4">The Reasoning</p>
+        <h2 className="rule-gold rule-gold-center mb-6 text-3xl font-semibold text-navy lg:text-[2.6rem]">
           {problem.heading}
         </h2>
-        <p className="text-lg leading-relaxed text-muted-foreground">{problem.lede}</p>
+        <p className="mt-8 text-lg leading-relaxed text-muted-foreground">{problem.lede}</p>
       </div>
 
-      <div className="mx-auto mt-14 grid max-w-5xl gap-6 md:grid-cols-3">
-        {problem.points.map((point) => (
-          <div
-            key={point.title}
-            className="rounded-2xl border border-border/50 bg-card p-6 shadow-card"
-          >
-            <h3 className="mb-3 text-lg font-semibold text-secondary">{point.title}</h3>
-            <p className="text-sm leading-relaxed text-muted-foreground">{point.body}</p>
+      <div className="mx-auto mt-16 grid max-w-5xl gap-8 md:grid-cols-3">
+        {problem.points.map((point, i) => (
+          <div key={point.title} className="border-t-2 border-gold/60 pt-6">
+            <div aria-hidden="true" className="mb-3 font-serif text-sm font-semibold text-gold-deep">
+              {String(i + 1).padStart(2, '0')}
+            </div>
+            <h3 className="mb-3 text-lg font-semibold leading-snug text-navy">
+              {point.title}
+            </h3>
+            <p className="leading-relaxed text-muted-foreground">{point.body}</p>
           </div>
         ))}
       </div>
 
-      <div className="mx-auto mt-12 max-w-3xl rounded-2xl bg-primary/5 p-8 text-center">
-        <p className="text-lg font-medium leading-relaxed text-secondary">{problem.turn}</p>
-        <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{nameNote}</p>
+      <div className="mx-auto mt-16 max-w-3xl border-l-2 border-gold pl-8">
+        <p className="font-serif text-xl leading-relaxed text-navy sm:text-[1.4rem] sm:leading-relaxed">
+          {problem.turn}
+        </p>
+        <p className="mt-5 text-sm leading-relaxed text-muted-foreground">{nameNote}</p>
       </div>
     </div>
   </section>

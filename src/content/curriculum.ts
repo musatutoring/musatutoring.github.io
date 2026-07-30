@@ -1,6 +1,5 @@
 /**
  * COURSES WE TEACH
- * Add or remove entries and the section rebuilds itself.
  */
 
 export type Course = {
@@ -10,11 +9,11 @@ export type Course = {
 
 export const curriculum: Course[] = [
   {
-    group: 'Middle school',
-    items: ['Pre-Algebra', 'Middle school math', 'Foundations & gap repair'],
+    group: 'Middle School',
+    items: ['Pre-Algebra', 'Middle School Mathematics', 'Foundations and Gap Repair'],
   },
   {
-    group: 'High school',
+    group: 'High School',
     items: ['Algebra I', 'Geometry', 'Algebra II', 'Pre-Calculus', 'AP Pre-Calculus'],
   },
   {
@@ -24,4 +23,4 @@ export const curriculum: Course[] = [
 ];
 
 export const curriculumNote =
-  'Math only, middle school through AP Calculus. We do not spread ourselves across every subject — this is the one we are good at.';
+  'Mathematics is the whole of our practice, from middle school foundations through AP Calculus. That depth is what allows us to identify a problem precisely rather than approximately.';

@@ -1,69 +1,61 @@
-import { Button } from '@/components/ui/button';
 import { tutors, teamNote } from '@/content/tutors';
-import { site } from '@/content/site';
-import { bookingHref } from '@/lib/booking';
 
-const Team = () => {
-  return (
-    <section id="about" className="scroll-mt-20 py-16 lg:py-24 bg-background">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl lg:text-4xl font-bold text-secondary mb-4">
-            Meet the Tutors
-          </h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            We are a small team on purpose. Musa meets every family himself, writes the plan,
-            then matches your student with the tutor who fits it.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-          {tutors.map((tutor, index) => (
-            <div
-              key={index}
-              className="bg-card rounded-2xl p-8 shadow-card border border-border/50 text-center"
-            >
-              <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4 overflow-hidden">
-                {tutor.photo ? (
-                  <img
-                    src={tutor.photo}
-                    alt={`${tutor.name}, ${tutor.role} at ${site.name}`}
-                    className="w-full h-full object-cover"
-                  />
-                ) : (
-                  <span className="text-2xl font-bold text-primary-strong">{tutor.initials}</span>
-                )}
-              </div>
-              <h3 className="text-xl font-bold text-secondary">{tutor.name}</h3>
-              <p className="text-sm font-medium text-primary-strong mb-4">{tutor.role}</p>
-              <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-                {tutor.summary}
-              </p>
-              <div className="flex flex-wrap gap-2 justify-center">
-                {tutor.focus.map((item) => (
-                  <span
-                    key={item}
-                    className="text-xs bg-primary/10 text-primary-strong px-3 py-1 rounded-full"
-                  >
-                    {item}
-                  </span>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-
-        <div className="bg-primary/5 rounded-2xl p-8 text-center max-w-3xl mx-auto">
-          <p className="text-muted-foreground leading-relaxed mb-6">{teamNote}</p>
-          <Button variant="hero" asChild>
-            <a href={bookingHref(site.schedulerUrl)}>
-              Book your Math Plan Call
-            </a>
-          </Button>
-        </div>
+const Team = () => (
+  <section id="about" className="scroll-mt-24 bg-muted/45 py-20 lg:py-28">
+    <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-3xl text-center">
+        <p className="eyebrow mb-4">Who You Are Working With</p>
+        <h2 className="rule-gold rule-gold-center mb-6 text-3xl font-semibold text-navy lg:text-[2.6rem]">
+          The People Behind the Program
+        </h2>
       </div>
-    </section>
-  );
-};
+
+      <div className="mx-auto mt-16 max-w-3xl">
+        {tutors.map((tutor) => (
+          <div
+            key={tutor.name}
+            className="flex flex-col gap-8 rounded-xl border border-border bg-card p-9 shadow-card sm:flex-row sm:p-11"
+          >
+            {tutor.photo ? (
+              <img
+                src={tutor.photo}
+                alt={tutor.name}
+                className="h-24 w-24 shrink-0 rounded-full object-cover"
+              />
+            ) : (
+              <div
+                aria-hidden="true"
+                className="flex h-24 w-24 shrink-0 items-center justify-center rounded-full border border-gold/40 bg-gold/10 font-serif text-3xl font-semibold text-gold-deep"
+              >
+                {tutor.initials}
+              </div>
+            )}
+
+            <div>
+              <h3 className="text-2xl font-semibold text-navy">{tutor.name}</h3>
+              <p className="eyebrow mt-1.5">{tutor.role}</p>
+              <p className="mt-5 leading-relaxed text-muted-foreground">{tutor.summary}</p>
+
+              <ul className="mt-6 flex flex-wrap gap-2">
+                {tutor.focus.map((f) => (
+                  <li
+                    key={f}
+                    className="rounded-full border border-border bg-muted/60 px-3.5 py-1.5 text-xs font-medium text-navy"
+                  >
+                    {f}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        ))}
+
+        <p className="mx-auto mt-10 max-w-2xl text-center leading-relaxed text-muted-foreground">
+          {teamNote}
+        </p>
+      </div>
+    </div>
+  </section>
+);
 
 export default Team;

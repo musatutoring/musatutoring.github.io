@@ -1,6 +1,5 @@
 /**
  * HOW ENROLMENT WORKS
- * The four steps between a parent finding the site and their student starting.
  */
 
 export type Step = {
@@ -12,53 +11,53 @@ export type Step = {
 
 export const enrolmentSteps: Step[] = [
   {
-    number: '1',
-    title: 'Book your Math Plan Call',
-    timing: 'Takes 2 minutes',
+    number: '01',
+    title: 'Book Your Math Plan Call',
+    timing: 'Two Minutes',
     body:
-      'Pick a time that suits you. You will need about five minutes to tell us your student\u2019s grade, their current math class, and what is going wrong.',
+      'Choose a time that suits you. We will ask for your student\u2019s grade, their current mathematics class, and a short description of what is going wrong, so that the call begins with context rather than introductions.',
   },
   {
-    number: '2',
+    number: '02',
     title: 'The Math Plan Call',
-    timing: '30 minutes, with Musa',
+    timing: 'Thirty Minutes, With Musa',
     body:
-      'We work out what is actually causing the trouble — which is often not the class they are failing. You leave the call knowing what we would do, what it costs, and whether we think we can help. If we do not think we are right for your student, we will say so.',
+      'Together we work out what is genuinely causing the difficulty, which is frequently not the class your student is struggling in. You will leave the call knowing what we would do, what it costs, and whether we believe we can help. If we do not think the program is right for your student, we will tell you.',
   },
   {
-    number: '3',
-    title: 'A free session for your student',
-    timing: '1 hour, no cost',
+    number: '03',
+    title: 'A Free Session for Your Student',
+    timing: 'One Hour, At No Cost',
     body:
-      'Your student meets their tutor and sits a placement assessment. You receive their results and a written 12-week plan with a specific goal — whether or not you go ahead.',
+      'Your student meets their tutor and completes a placement assessment. You then receive their results and a written twelve-week plan setting out a specific goal, whether or not you decide to enrol.',
   },
   {
-    number: '4',
-    title: 'Start with the cohort',
-    timing: 'Monday, September 7',
+    number: '04',
+    title: 'Begin With the Cohort',
+    timing: 'Early September',
     body:
-      'Your regular weekly times are locked in and your student begins. Weekly reports start at the end of week one.',
+      'Your weekly session times are confirmed and your student begins. The first written report reaches you at the end of week one.',
   },
 ];
 
 /**
- * THE WEEKLY RHYTHM once the program is running.
+ * THE WEEKLY RHYTHM once the program is under way.
  */
 export const weeklyRhythm = [
   {
-    title: 'Two sessions',
-    body: 'One hour each, one-to-one with the same tutor every week.',
+    title: 'Two Sessions',
+    body: 'One hour each, taught one-to-one by the same tutor throughout the term.',
   },
   {
-    title: 'Targeted practice',
-    body: 'Problems generated on the exact weakness, worked between sessions.',
+    title: 'Targeted Practice',
+    body: 'Problem sets built around the specific weakness being addressed that week.',
   },
   {
-    title: 'A written report',
-    body: 'Sent to you at the end of each week: covered, improved, still weak, next.',
+    title: 'A Written Report',
+    body: 'Sent to you each week: what was taught, what improved, and what still needs work.',
   },
   {
-    title: 'A plan adjustment',
-    body: 'The following week is re-planned against the goal, not against a syllabus.',
+    title: 'A Revised Plan',
+    body: 'The week ahead is re-planned against the goal rather than against a fixed syllabus.',
   },
 ];

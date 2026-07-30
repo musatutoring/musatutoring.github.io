@@ -2,43 +2,49 @@ import { Check, X } from 'lucide-react';
 import { fit } from '@/content/program';
 
 const WhoItsFor = () => (
-  <section id="fit" className="scroll-mt-20 bg-background py-16 lg:py-24">
+  <section id="fit" className="scroll-mt-24 bg-background py-20 lg:py-28">
     <div className="container mx-auto px-4 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-3xl text-center">
-        <h2 className="mb-4 text-3xl font-bold text-secondary lg:text-4xl">
-          Is this right for your student?
+        <p className="eyebrow mb-4">Suitability</p>
+        <h2 className="rule-gold rule-gold-center mb-6 text-3xl font-semibold text-navy lg:text-[2.6rem]">
+          Is This Right for Your Student?
         </h2>
-        <p className="text-lg text-muted-foreground">
-          We would rather tell you now than take your money and disappoint you in November.
+        <p className="mt-8 text-lg leading-relaxed text-muted-foreground">
+          We would far rather tell you now than take your money and disappoint you in
+          November.
         </p>
       </div>
 
-      <div className="mx-auto mt-12 grid max-w-4xl gap-6 md:grid-cols-2">
-        <div className="rounded-2xl border border-border/50 bg-card p-8 shadow-card">
-          <h3 className="mb-5 font-semibold text-secondary">This is a good fit if</h3>
-          <ul className="space-y-3">
+      <div className="mx-auto mt-16 grid max-w-4xl gap-8 md:grid-cols-2">
+        <div className="rounded-xl border border-gold/40 bg-card p-9 shadow-card">
+          <h3 className="mb-6 text-lg font-semibold text-navy">
+            The Program Suits You If
+          </h3>
+          <ul className="space-y-4">
             {fit.forYou.map((item) => (
               <li key={item} className="flex items-start gap-3">
                 <Check
-                  className="mt-0.5 h-5 w-5 shrink-0 text-primary-strong"
+                  className="mt-0.5 h-[1.1rem] w-[1.1rem] shrink-0 text-gold-deep"
                   aria-hidden="true"
                 />
-                <span className="text-secondary">{item}</span>
+                <span className="leading-relaxed text-navy">{item}</span>
               </li>
             ))}
           </ul>
         </div>
 
-        <div className="rounded-2xl border border-border/50 bg-muted/40 p-8">
-          <h3 className="mb-5 font-semibold text-secondary">Probably not a fit if</h3>
-          <ul className="space-y-3">
+        <div className="rounded-xl border border-border bg-muted/40 p-9">
+          <h3 className="mb-6 text-lg font-semibold text-navy">
+            It Is Probably Not for You If
+          </h3>
+          <ul className="space-y-4">
             {fit.notForYou.map((item) => (
               <li key={item} className="flex items-start gap-3">
                 <X
-                  className="mt-0.5 h-5 w-5 shrink-0 text-muted-foreground"
+                  className="mt-0.5 h-[1.1rem] w-[1.1rem] shrink-0 text-muted-foreground"
                   aria-hidden="true"
                 />
-                <span className="text-muted-foreground">{item}</span>
+                <span className="leading-relaxed text-muted-foreground">{item}</span>
               </li>
             ))}
           </ul>
