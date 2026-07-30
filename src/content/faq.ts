@@ -47,7 +47,7 @@ export const faqs: FaqItem[] = [
   {
     question: 'What happens once the twelve weeks are over?',
     answer:
-      'We review progress against the goal at your final meeting. Some students finish and stop, which is precisely the intention. Others set a fresh goal for the following term. Nothing renews automatically and there is nothing you need to cancel.',
+      'We review progress against the goal at your final meeting, and we set a fresh goal for the following term. If your student did not reach their goal while following the plan, that is on us and we will continue free of charge until they reach the goal we agreed on. ',
   },
   {
     question: 'What if we miss this cohort?',
