@@ -1,6 +1,7 @@
 import { Button } from '@/components/ui/button';
 import { tutors, teamNote } from '@/content/tutors';
 import { site } from '@/content/site';
+import { bookingHref } from '@/lib/booking';
 
 const Team = () => {
   return (
@@ -55,8 +56,8 @@ const Team = () => {
         <div className="bg-primary/5 rounded-2xl p-8 text-center max-w-3xl mx-auto">
           <p className="text-muted-foreground leading-relaxed mb-6">{teamNote}</p>
           <Button variant="hero" asChild>
-            <a href={site.bookingUrl}>
-              Book a Free First Session
+            <a href={bookingHref(site.schedulerUrl)}>
+              Book your Math Plan Call
             </a>
           </Button>
         </div>

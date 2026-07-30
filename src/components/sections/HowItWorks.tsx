@@ -1,59 +1,69 @@
-import { Calendar, MessageSquare, Target, TrendingUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { steps } from '@/content/process';
+import { ArrowRight } from 'lucide-react';
+import { enrolmentSteps, weeklyRhythm } from '@/content/process';
 import { site } from '@/content/site';
+import { bookingHref } from '@/lib/booking';
 
-const iconMap = {
-  message: MessageSquare,
-  target: Target,
-  calendar: Calendar,
-  trending: TrendingUp,
-};
+const HowItWorks = () => (
+  <section id="how-it-works" className="scroll-mt-20 bg-muted/40 py-16 lg:py-24">
+    <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-3xl text-center">
+        <h2 className="mb-4 text-3xl font-bold text-secondary lg:text-4xl">
+          How you get started
+        </h2>
+        <p className="text-lg text-muted-foreground">
+          Four steps. Nothing is paid until you have met us and your student has had a
+          session.
+        </p>
+      </div>
 
-const HowItWorks = () => {
-  return (
-    <section id="how-it-works" className="scroll-mt-20 py-16 lg:py-24 bg-background">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl lg:text-4xl font-bold text-secondary mb-4">How It Works</h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Four steps from your first message to weekly sessions. The first one costs nothing.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-          {steps.map((step, index) => {
-            const Icon = iconMap[step.icon];
-            return (
-              <div key={index} className="relative">
-                <div className="bg-card rounded-2xl p-6 shadow-card border border-border/50 h-full">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-primary-foreground font-bold">
-                      {index + 1}
-                    </div>
-                    <Icon className="w-6 h-6 text-primary-strong" />
-                  </div>
-                  <h3 className="text-lg font-bold text-secondary mb-2">{step.title}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-                    {step.description}
-                  </p>
-                  <p className="text-xs font-medium text-primary-strong">{step.timing}</p>
-                </div>
+      <ol className="mx-auto mt-14 max-w-4xl space-y-5">
+        {enrolmentSteps.map((step) => (
+          <li
+            key={step.number}
+            className="flex flex-col gap-5 rounded-2xl border border-border/50 bg-card p-6 shadow-card sm:flex-row sm:p-8"
+          >
+            <div
+              aria-hidden="true"
+              className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-xl font-bold text-primary-strong"
+            >
+              {step.number}
+            </div>
+            <div>
+              <div className="mb-2 flex flex-wrap items-baseline gap-x-3 gap-y-1">
+                <h3 className="text-lg font-semibold text-secondary">{step.title}</h3>
+                <span className="text-sm font-medium text-primary-strong">{step.timing}</span>
               </div>
-            );
-          })}
-        </div>
+              <p className="leading-relaxed text-muted-foreground">{step.body}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
 
-        <div className="text-center">
-          <Button variant="hero" size="lg" asChild>
-            <a href={site.bookingUrl}>
-              Book a Free First Session
-            </a>
-          </Button>
+      <div className="mx-auto mt-16 max-w-4xl">
+        <h3 className="mb-6 text-center text-xl font-bold text-secondary">
+          Then, every week for twelve weeks
+        </h3>
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {weeklyRhythm.map((item) => (
+            <div key={item.title} className="rounded-2xl bg-card p-5 shadow-card">
+              <h4 className="mb-2 font-semibold text-secondary">{item.title}</h4>
+              <p className="text-sm leading-relaxed text-muted-foreground">{item.body}</p>
+            </div>
+          ))}
         </div>
       </div>
-    </section>
-  );
-};
+
+      <div className="mt-12 text-center">
+        <Button asChild size="lg" className="px-8 text-base font-semibold">
+          <a href={bookingHref(site.schedulerUrl)}>
+            Book your Math Plan Call
+            <ArrowRight className="ml-2 h-5 w-5" aria-hidden="true" />
+          </a>
+        </Button>
+      </div>
+    </div>
+  </section>
+);
 
 export default HowItWorks;

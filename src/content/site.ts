@@ -1,64 +1,61 @@
 /**
  * SITE SETTINGS
  * -------------
- * This is the main settings file for the website.
- * Change the text between the quote marks to update the site.
- * Do not delete the quote marks, commas, or curly braces.
+ * Business details and the two links the site depends on.
+ * Change the text between the quote marks. Do not delete quote marks or commas.
  */
 
 export const site = {
-  /** Business name, shown in the header, footer and browser tab. */
   name: 'Musa Tutoring',
+  tagline: 'One-to-one math for middle school and high school',
 
-  /** Short line under the business name. */
-  tagline: 'Tutoring for Twin Cities families, in person and online',
-
-  /** One or two sentences describing the business. Used in the footer. */
   shortDescription:
-    'Tutoring built around each student — a free first session, a plan made for their goals, and regular updates for parents.',
+    'A 12-week one-to-one math program built around a single goal for your student, with a written plan, weekly reports and monthly parent meetings.',
 
-  /** Public phone number (Google Voice — rings your phone, keeps your cell private). */
+  /** Google Voice number — rings your phone, keeps your cell private. */
   phone: '(612) 234-1270',
-
-  /** Phone number in link format (digits only, no spaces or brackets). */
   phoneLink: '+16122341270',
 
-  /** Public email address. */
   email: 'info@musatutoring.org',
 
-  /** Where sessions happen. Shown on the contact section and in the footer. */
   serviceArea: 'Minnetonka, Hopkins, Eden Prairie, St. Louis Park & across the Twin Cities',
-
-  /** Short version of the above, used where space is tight. */
-  serviceAreaShort: 'Twin Cities metro — in person and online',
-
-  /** How quickly enquiries are answered. Shown on the contact section. */
+  serviceAreaShort: 'Twin Cities families, taught online',
   responseTime: 'Within 24 hours',
 
   /**
-   * WHERE THE "BOOK" BUTTONS GO
-   * Every "Book" button on the site sends people to the enquiry form
-   * further down the home page. You should not need to change this.
+   * ---------------------------------------------------------------
+   * THE BOOKING LINK  —  YOU MUST SET THIS BEFORE LAUNCH
+   * ---------------------------------------------------------------
+   * This is your Google Calendar appointment booking page. Every
+   * "Book your Math Plan Call" button on the site points at it.
+   *
+   * To create it (free with your Google Workspace):
+   *   1. Open Google Calendar
+   *   2. Click Create > Appointment schedule
+   *   3. Name it "Math Plan Call", set it to 30 minutes
+   *   4. Set the hours you want to take calls
+   *   5. Under "Booking form", add these questions:
+   *        - Student's grade
+   *        - Current math class
+   *        - What is going wrong right now?
+   *        - Phone number
+   *   6. Click "Share" and copy the booking page link
+   *   7. Paste it below, replacing the whole line
+   *
+   * Until you paste a real link, the buttons fall back to the
+   * enquiry form at the bottom of the page.
    */
-  bookingUrl: '/#contact',
+  schedulerUrl: '',
 
   /**
    * TUTORCRUNCHER ENQUIRY FORM
-   * This is the public key for your TutorCruncher Socket integration.
-   * When a parent submits the form on your site, their details go
-   * straight into TutorCruncher as a new client.
-   *
-   * Find or replace it at:
-   *   System > Settings > TutorCruncher API > API Integrations
-   *
-   * IMPORTANT: musatutoring.org must be listed under "Allowed Domains"
-   * in that same screen, or the form shows a 403 error.
+   * Submissions arrive in TutorCruncher as a new client automatically.
+   * Key from: System > Settings > TutorCruncher API > API Integrations
+   * musatutoring.org must be listed under "Allowed Domains".
    */
   tutorCruncherSocketKey: '1dd4875e818fff8c65bb',
 
-  /**
-   * Social links. Leave a value empty ('') to hide that icon.
-   */
+  /** Social links. Leave empty ('') to hide. */
   social: {
     instagram: '',
     facebook: '',

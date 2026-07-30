@@ -2,6 +2,7 @@ import { Star } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { testimonials } from '@/content/testimonials';
 import { site } from '@/content/site';
+import { bookingHref } from '@/lib/booking';
 
 const Testimonials = () => {
   // The section hides itself entirely until there is at least one real
@@ -45,7 +46,7 @@ const Testimonials = () => {
 
         <div className="text-center">
           <Button variant="hero" asChild>
-            <a href={site.bookingUrl}>
+            <a href={bookingHref(site.schedulerUrl)}>
               Book a Free Session
             </a>
           </Button>

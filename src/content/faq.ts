@@ -1,71 +1,63 @@
 /**
  * FREQUENTLY ASKED QUESTIONS
- * --------------------------
- * Edit, add or remove questions here. They appear in the FAQ section
- * in the order they are listed.
+ * These exist to answer the objections parents actually raise.
+ * Add a question by copying one block and changing the text.
  */
 
-export type Faq = { question: string; answer: string };
+export type FaqItem = {
+  question: string;
+  answer: string;
+};
 
-export const faqs: Faq[] = [
+export const faqs: FaqItem[] = [
   {
-    question: 'How do we get started?',
+    question: 'Why twelve weeks? Can we just book a few hours?',
     answer:
-      'Book a free first session. Your student meets a tutor and takes a short placement check, and we talk with you about what they are struggling with and what you want to see change. There is no cost and nothing to sign.',
+      'Because a few hours cannot fix what is usually wrong. Math builds on itself, so a student struggling now almost always has a gap from a year or two back. Hourly help gets tonight\u2019s homework done without ever going back for the gap, which is why families end up paying for it month after month. Twelve weeks is the time it takes to close the gap and get ahead. We only sell the program.',
   },
   {
-    question: 'What happens after that first session?',
+    question: 'What does it cost?',
     answer:
-      'You get a short plan: where your student is starting from, what we would work on first, how often we should meet, and what it costs. If it looks right to you, we book a weekly time. If not, nothing happens and you owe nothing.',
+      'Five hundred dollars for the full twelve weeks, or three monthly payments of $185. That covers 24 one-to-one hours, the placement assessment, the written plan, weekly reports, and monthly meetings. It works out to roughly $21 an hour — well below the going rate for one-to-one math tutoring in the Twin Cities.',
   },
   {
-    question: 'Are sessions in person or online?',
+    question: 'What if it is not working?',
     answer:
-      'Both. We agree on the format with you during the first session, based on where you are, what your student is working on, and what fits your week.',
+      'Two things protect you. If you are not satisfied after your student\u2019s second session, we refund you in full. And if at the end of twelve weeks your student has attended their sessions and done the work but has not reached the goal we agreed in week one, we keep working with them for free until they do.',
   },
   {
-    question: 'What subjects and grade levels do you cover?',
+    question: 'Is the monthly option a subscription I can cancel?',
     answer:
-      'Kindergarten through high school, plus college-level coursework in some subjects. That includes math, sciences, English and writing, social studies, ACT and SAT prep, and study skills. If you do not see your subject, ask — we can usually help or point you somewhere that can.',
+      'No. The program is a twelve-week commitment and the monthly option is simply a way to spread the cost. The full-refund window after session two is the point at which you decide whether to continue.',
   },
   {
-    question: 'Who will be tutoring my child?',
+    question: 'Is this online or in person?',
     answer:
-      'Musa leads the first session and writes the plan, then matches your student with the tutor whose subjects fit that plan. You will know who your tutor is before sessions begin.',
+      'The Delta Program is online, one-to-one. That lets us match your student to the right tutor rather than the nearest one, and it means no driving and no cancelled sessions because of Minnesota weather. We continue to run our in-person group classes for existing families.',
   },
   {
-    question: 'How long are sessions and how often do we meet?',
+    question: 'Who actually teaches my student?',
     answer:
-      'Regular sessions are usually 60 minutes. Most families meet once a week; some add a second session when a test is coming up.',
+      'One tutor, matched by Musa to what your student needs, and the same tutor every week. Musa runs your consultation, writes the plan, and meets you monthly. You will always know who is teaching your student and why they were chosen.',
   },
   {
-    question: 'Do you offer small group classes?',
+    question: 'What if we miss a session?',
     answer:
-      'Yes. Groups are built around students at a similar level working on the same material, which keeps the per-family rate lower while everyone still gets attention.',
+      'Tell us in advance and we will move it. Sessions cancelled at short notice repeatedly are the one thing that genuinely stops the program working, which is why attendance is part of our end-of-term promise.',
   },
   {
-    question: 'How will I know if it is working?',
+    question: 'My student is doing fine but wants to get ahead.',
     answer:
-      'You get notes after sessions and a regular update on how your student is tracking against the plan. If something is not landing, we change the plan rather than repeat it.',
+      'That works too. The goal we set in week one is whatever you want it to be — repairing a gap, lifting a grade, preparing for an AP class, or getting ahead of next year\u2019s material. The structure is the same; the target is yours.',
   },
   {
-    question: 'How much does it cost?',
+    question: 'What happens after the twelve weeks?',
     answer:
-      'The rate depends on what your student needs, how often you meet, and whether it is one-to-one or a small group — which is why we set it after the free session rather than before. You always get the rate in writing before anything starts.',
+      'We review against the goal at your final meeting. Some students finish and stop, which is the point. Others set a new goal for the next term. There is no automatic renewal and nothing to cancel.',
   },
   {
-    question: 'How do we schedule and pay?',
+    question: 'What if I miss this cohort?',
     answer:
-      'Everything runs through one online account. You get a login when you enroll, and you can see upcoming sessions, session notes and invoices in the same place. Reminders come by email and text.',
-  },
-  {
-    question: 'What if we need to cancel a session?',
-    answer:
-      'Just give us 24 hours notice so another family can use the slot. Illness and emergencies happen, and we handle those case by case.',
-  },
-  {
-    question: 'Can you support students with learning differences?',
-    answer:
-      'Yes. Tell us about any accommodations, IEP or 504 plan in place and we will work with them.',
+      'Places are limited and enrolment closes on August 30. If you miss it, join the waitlist and we will contact you before the December cohort opens — waitlist families get first refusal on places.',
   },
 ];

@@ -1,37 +1,42 @@
 import Header from '@/components/Header';
 import Hero from '@/components/sections/Hero';
-import Approach from '@/components/sections/Approach';
+import Problem from '@/components/sections/Problem';
 import HowItWorks from '@/components/sections/HowItWorks';
-import Tracks from '@/components/sections/Tracks';
-import Services from '@/components/sections/Services';
+import Included from '@/components/sections/Included';
+import Curriculum from '@/components/sections/Curriculum';
+import Pricing from '@/components/sections/Pricing';
+import Guarantee from '@/components/sections/Guarantee';
+import WhoItsFor from '@/components/sections/WhoItsFor';
 import Team from '@/components/sections/Team';
-import Plans from '@/components/sections/Plans';
-import Schedule from '@/components/sections/Schedule';
 import Testimonials from '@/components/sections/Testimonials';
 import FAQ from '@/components/sections/FAQ';
-import Contact from '@/components/sections/Contact';
+import Enrol from '@/components/sections/Enrol';
 import Footer from '@/components/sections/Footer';
 
-const Index = () => {
-  return (
-    <div className="min-h-screen bg-background">
-      <Header />
-      <main>
-        <Hero />
-        <Approach />
-        <HowItWorks />
-        <Tracks />
-        <Services />
-        <Team />
-        <Plans />
-        <Schedule />
-        <Testimonials />
-        <FAQ />
-        <Contact />
-      </main>
-      <Footer />
-    </div>
-  );
-};
+/**
+ * THE HOME PAGE
+ * The order below is the order a parent reads the page in.
+ * Move a line to move a section. Delete a line to hide one.
+ */
+const Index = () => (
+  <div className="min-h-screen bg-background">
+    <Header />
+    <main>
+      <Hero />
+      <Problem />
+      <HowItWorks />
+      <Included />
+      <Curriculum />
+      <Pricing />
+      <Guarantee />
+      <WhoItsFor />
+      <Team />
+      <Testimonials />
+      <FAQ />
+      <Enrol />
+    </main>
+    <Footer />
+  </div>
+);
 
 export default Index;

@@ -1,14 +1,7 @@
 /**
- * TUTORS
- * ------
- * Add, remove or edit tutors here. The team section on the website
- * rebuilds itself automatically from this list.
- *
- * To add a tutor, copy one block from `{` to `},` and paste it below,
- * then change the details.
- *
- * `initials` shows in the circle when there is no photo.
- * `photo`    leave this line out until you have a real photo.
+ * WHO TEACHES
+ * Copy a block from `{` to `},` to add someone.
+ * Leave `photo` out until you have a real photograph.
  */
 
 export type Tutor = {
@@ -23,16 +16,13 @@ export type Tutor = {
 export const tutors: Tutor[] = [
   {
     name: 'Musa',
-    role: 'Founder & Lead Tutor',
+    role: 'Founder',
     initials: 'M',
     summary:
-      'Musa started Musa Tutoring after six years of tutoring students across the Twin Cities, alongside classroom teaching experience and a business education at the University of Minnesota. He meets every new family himself, writes the plan, and matches the student with the right tutor.',
-    focus: ['Learning plans', 'Parent consultations', 'Math & sciences', 'Test prep'],
+      'Musa runs every Math Plan Call himself, writes your student\u2019s plan, chooses their tutor, and meets you each month to review progress against the goal. Six years tutoring across the Twin Cities, classroom teaching experience, and a business education at the University of Minnesota.',
+    focus: ['Your consultation', 'The 12-week plan', 'Tutor matching', 'Monthly reviews'],
   },
 ];
 
-/**
- * The short line shown under the team, covering tutors not listed above.
- */
 export const teamNote =
-  'Musa works alongside a small team of tutors with expertise in their own subjects. After your free first session, he matches your student with the right one.';
+  'Your student is taught by one tutor, every week, chosen for what your student actually needs. You will know who they are and why they were matched before the program starts.';

@@ -1,123 +1,120 @@
-import { Link } from 'react-router-dom';
-import { Phone, Mail, MapPin, ArrowUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { ArrowRight, Mail, MapPin, Phone } from 'lucide-react';
+import logo from '@/assets/musa-tutoring-logo.png';
 import { site } from '@/content/site';
-import { tracks } from '@/content/tracks';
+import { program } from '@/content/program';
+import { bookingHref, daysUntil } from '@/lib/booking';
 
 const Footer = () => {
-  const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) element.scrollIntoView({ behavior: 'smooth' });
-  };
+  const year = new Date().getFullYear();
+  const open = daysUntil(program.enrolmentCloses) > 0 && program.seatsRemaining > 0;
 
-  const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
-
-  const navigationLinks = [
-    { label: 'How It Works', href: '#how-it-works' },
-    { label: 'Tracks', href: '#tracks' },
-    { label: 'Subjects', href: '#services' },
-    { label: 'Plans & Enrollment', href: '#plans' },
-    { label: 'Meet the Tutors', href: '#about' },
-    { label: 'FAQ', href: '#faq' },
-    { label: 'Contact', href: '#contact' },
+  const links = [
+    { label: 'Why 12 weeks', href: '#why' },
+    { label: 'How it works', href: '#how-it-works' },
+    { label: "What's included", href: '#included' },
+    { label: 'Courses', href: '#courses' },
+    { label: 'Pricing', href: '#pricing' },
+    { label: 'Our promise', href: '#promise' },
+    { label: 'Questions', href: '#faq' },
   ];
 
   return (
     <footer className="bg-secondary text-secondary-foreground">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <div>
-            <h3 className="text-2xl font-bold mb-4">{site.name}</h3>
-            <p className="opacity-80 mb-6 text-sm leading-relaxed">{site.shortDescription}</p>
-
-            <div className="space-y-3">
-              <a href={`tel:${site.phoneLink}`} className="flex items-center gap-3 text-sm hover:text-primary transition-smooth">
-                <Phone className="w-4 h-4 text-primary" />
-                <span>{site.phone}</span>
-              </a>
-              <a href={`mailto:${site.email}`} className="flex items-center gap-3 text-sm hover:text-primary transition-smooth">
-                <Mail className="w-4 h-4 text-primary" />
-                <span>{site.email}</span>
-              </a>
-              <div className="flex items-center gap-3 text-sm">
-                <MapPin className="w-4 h-4 text-primary" />
-                <span>{site.serviceArea}</span>
-              </div>
-            </div>
-          </div>
-
-          <div>
-            <h4 className="font-semibold mb-4">Quick Links</h4>
-            <nav className="space-y-2">
-              {navigationLinks.map((link, index) => (
-                <button
-                  key={index}
-                  onClick={() => scrollToSection(link.href)}
-                  className="block text-sm opacity-80 hover:text-primary hover:opacity-100 transition-smooth"
-                >
-                  {link.label}
-                </button>
-              ))}
-              <Link
-                to="/pathways"
-                className="block text-sm opacity-80 hover:text-primary hover:opacity-100 transition-smooth"
-              >
-                Pathways
-              </Link>
-            </nav>
-          </div>
-
-          <div>
-            <h4 className="font-semibold mb-4">Tracks</h4>
-            <div className="space-y-2">
-              {tracks.map((track) => (
-                <p key={track.slug} className="text-sm opacity-80">
-                  {track.title}
-                </p>
-              ))}
-            </div>
-          </div>
-
-          <div>
-            <h4 className="font-semibold mb-4">Get Started</h4>
-            <p className="text-sm opacity-80 mb-4">
-              Your first session is free — a short placement check and a
-              straight answer about what your student needs.
+      <div className="border-b border-primary-foreground/10">
+        <div className="container mx-auto px-4 py-14 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-3xl text-center">
+            <h2 className="mb-3 text-2xl font-bold lg:text-3xl">
+              {open
+                ? `${program.seatsRemaining} places left for ${program.programStartsLabel}`
+                : `Waitlist open for ${program.nextCohort}`}
+            </h2>
+            <p className="mb-7 text-secondary-foreground/85">
+              {open
+                ? 'Start with a free 30-minute call and a free session for your student. Nothing is paid before then.'
+                : 'Leave your details and we will contact you before places open.'}
             </p>
-            <div className="space-y-3">
-              <Button variant="hero" size="sm" className="w-full" asChild>
-                <a href={site.bookingUrl}>
-                  Book a Free First Session
-                </a>
-              </Button>
-              <Button
-                variant="outline"
-                size="sm"
-                onClick={() => scrollToSection('#contact')}
-                className="w-full border-secondary-foreground/30 bg-transparent hover:bg-secondary-foreground hover:text-secondary"
-              >
-                Contact Us
-              </Button>
-            </div>
+            <Button
+              asChild
+              size="lg"
+              className="bg-primary-foreground px-8 text-base font-semibold text-secondary hover:bg-primary-foreground/90"
+            >
+              <a href={open ? bookingHref(site.schedulerUrl) : '/#enrol'}>
+                {open ? 'Book your Math Plan Call' : 'Join the waitlist'}
+                <ArrowRight className="ml-2 h-5 w-5" aria-hidden="true" />
+              </a>
+            </Button>
           </div>
         </div>
       </div>
 
-      <div className="border-t border-secondary-foreground/10">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div className="text-sm opacity-60">
-              © {new Date().getFullYear()} {site.name}. All rights reserved.
+      <div className="container mx-auto px-4 py-12 sm:px-6 lg:px-8">
+        <div className="grid gap-10 md:grid-cols-3">
+          <div>
+            <div className="mb-4 flex items-center gap-3">
+              <img
+                src={logo}
+                alt=""
+                className="h-11 w-11 rounded-lg object-contain"
+                aria-hidden="true"
+              />
+              <div>
+                <div className="font-bold">{site.name}</div>
+                <div className="text-sm text-secondary-foreground/70">{site.tagline}</div>
+              </div>
             </div>
-            <button
-              onClick={scrollToTop}
-              className="flex items-center gap-2 text-xs text-primary hover:opacity-80 transition-smooth"
-              aria-label="Back to top"
-            >
-              <ArrowUp className="w-4 h-4" />
-              <span className="hidden sm:inline">Back to Top</span>
-            </button>
+            <p className="text-sm leading-relaxed text-secondary-foreground/75">
+              {site.shortDescription}
+            </p>
           </div>
+
+          <div>
+            <h3 className="mb-4 font-semibold">On this page</h3>
+            <ul className="space-y-2">
+              {links.map((link) => (
+                <li key={link.href}>
+                  <a
+                    href={link.href}
+                    className="text-sm text-secondary-foreground/75 transition-colors hover:text-secondary-foreground"
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="mb-4 font-semibold">Get in touch</h3>
+            <ul className="space-y-3 text-sm">
+              <li>
+                <a
+                  href={`tel:${site.phoneLink}`}
+                  className="flex items-start gap-3 text-secondary-foreground/75 transition-colors hover:text-secondary-foreground"
+                >
+                  <Phone className="mt-0.5 h-4 w-4 shrink-0" aria-hidden="true" />
+                  <span>{site.phone}</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href={`mailto:${site.email}`}
+                  className="flex items-start gap-3 text-secondary-foreground/75 transition-colors hover:text-secondary-foreground"
+                >
+                  <Mail className="mt-0.5 h-4 w-4 shrink-0" aria-hidden="true" />
+                  <span className="break-all">{site.email}</span>
+                </a>
+              </li>
+              <li className="flex items-start gap-3 text-secondary-foreground/75">
+                <MapPin className="mt-0.5 h-4 w-4 shrink-0" aria-hidden="true" />
+                <span>{site.serviceArea}</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="mt-10 border-t border-primary-foreground/10 pt-6 text-center text-sm text-secondary-foreground/60">
+          © {year} {site.name}. All rights reserved.
         </div>
       </div>
     </footer>

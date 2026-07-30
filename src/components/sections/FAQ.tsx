@@ -7,6 +7,7 @@ import {
 import { Button } from '@/components/ui/button';
 import { faqs } from '@/content/faq';
 import { site } from '@/content/site';
+import { bookingHref } from '@/lib/booking';
 
 const FAQ = () => {
   return (
