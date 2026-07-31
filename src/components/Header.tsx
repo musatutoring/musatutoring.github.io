@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import logo from '@/assets/logo-badge-navy.png';
+import logo from '@/assets/logo-badge-ivory.png';
 import { site } from '@/content/site';
 import { program } from '@/content/program';
 import { bookingHref, daysUntil } from '@/lib/booking';
