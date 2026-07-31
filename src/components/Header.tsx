@@ -40,7 +40,7 @@ const Header = () => {
       {open && (
         <div className="bg-navy px-4 py-2.5 text-center text-sm text-ivory/85">
           <span className="font-medium text-gold">
-            Only {program.seatsTotal} Places in This Cohort
+            Only {program.seatsTotal} Places Left in This Cohort
           </span>
           <span className="hidden sm:inline">
             {' '}
