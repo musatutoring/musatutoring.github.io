@@ -170,11 +170,11 @@ const Enrol = () => {
           {/* ---------- Enquiry / waitlist form ---------- */}
           <div className="rounded-xl border border-border bg-card p-8 shadow-card sm:p-9">
             <h3 className="mb-2 text-xl font-semibold text-navy">
-              {open ? 'Or Send Us a Message' : 'Join the Waiting List'}
+              {open ? 'Or Get in Touch' : 'Join the Waiting List'}
             </h3>
             <p className="mb-6 text-sm text-muted-foreground">
               {open
-                ? 'Not ready to choose a time? Tell us about your student and we will come back to you.'
+                ? 'Not ready to choose a time? Fill out the form below and we will get back to you ASAP.'
                 : 'Tell us about your student and we will be in touch before the next cohort opens.'}
             </p>
 
