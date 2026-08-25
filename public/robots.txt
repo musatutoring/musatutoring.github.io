@@ -1,5 +1,0 @@
-User-agent: *
-Allow: /
-Disallow: /arabic/
-
-Sitemap: https://musatutoring.org/sitemap.xml
