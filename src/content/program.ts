@@ -12,9 +12,9 @@ export const program = {
   eyebrow: 'Now Enrolling · Fall 2026',
 
   /** Dates. Use the format YYYY-MM-DD; the site works the countdown out. */
-  enrolmentCloses: '2026-08-30',
-  enrolmentClosesLabel: 'August 30',
-  startsLabel: 'early September',
+  enrolmentCloses: '2026-09-07',
+  enrolmentClosesLabel: 'September 7',
+  startsLabel: 'September 7',
   nextCohort: 'the winter cohort',
 
   /** Places in this cohort. */

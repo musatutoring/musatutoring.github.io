@@ -27,7 +27,7 @@ const Footer = () => {
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="mb-5 text-2xl font-semibold text-ivory lg:text-[2rem] lg:leading-snug">
               {open
-                ? 'Twenty Places. One Cohort. Enrolment Closes August 30.'
+                ? `Only ${program.seatsTotal} Places. Enrolment Closes ${program.enrolmentClosesLabel}.`
                 : 'Enrolment Has Closed for This Cohort.'}
             </h2>
             <p className="mb-9 leading-relaxed text-ivory/70">

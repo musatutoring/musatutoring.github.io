@@ -52,6 +52,6 @@ export const faqs: FaqItem[] = [
   {
     question: 'What if we miss this cohort?',
     answer:
-      'Places are limited and enrolment closes on August 30. If you miss it, join the waiting list and we will contact you before places open again. Families on the waiting list are offered places first.',
+      'Places are limited and enrolment closes on September 7. If you miss it, join the waiting list and we will contact you before places open again. Families on the waiting list are offered places first.',
   },
 ];

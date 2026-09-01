@@ -34,7 +34,7 @@ export const enrolmentSteps: Step[] = [
   {
     number: '04',
     title: 'Begin With the Cohort',
-    timing: 'Early September',
+    timing: 'September 7',
     body:
       'Your weekly session times are confirmed and your student begins. The first written report reaches you at the end of week one.',
   },

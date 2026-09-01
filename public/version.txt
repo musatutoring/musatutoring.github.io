@@ -1,4 +1,4 @@
-v4 · navy-gold palette · calendar embed · built 2026-08-25
+v5 · enrolment + start both September 7 · built 2026-08-25
 
 If you can read this at https://musatutoring.org/version.txt then the
 newest build is deployed. If this page 404s, or shows an older line,
