@@ -47,7 +47,7 @@ const Enrol = () => {
           </h2>
           <p className="mt-8 text-lg leading-relaxed text-muted-foreground">
             {open
-              ? 'Thirty minutes with Musa. We work out what is genuinely going wrong and tell you honestly whether we can help. Nothing is payable on this call, and there is no obligation afterwards.'
+              ? 'Thirty minutes with Musa. We discuss how we can tailor the tutoring experience specifically to your student and answer any questions you have about the program. Nothing is payable on this call, and there is no obligation afterwards.'
               : 'This cohort has closed. Leave your details and we will contact you before places open again. Families on the waiting list are offered places first.'}
           </p>
           {open && (
